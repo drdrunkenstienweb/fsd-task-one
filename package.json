@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack": "webpack -r esm --config=./scripts/webpack/configs/webpack.common.js",
+    "dev": "cross-env NODE_ENV=development webpack -r esm --config=./scripts/webpack/configs/webpack.dev.js",
+    "prod": "cross-env NODE_ENV=production webpack -r esm --config=./scripts/webpack/configs/webpack.prod.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,15 @@
   },
   "homepage": "https://github.com/drdrunkenstienweb/fsd-task-one#readme",
   "devDependencies": {
+    "app-root-path": "^3.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.2.0",
+    "esm": "^3.2.25",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.0.9"
   }
 }
