@@ -1,0 +1,24 @@
+{
+  "name": "fsd-task-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drdrunkenstienweb/fsd-task-one.git"
+  },
+  "keywords": [],
+  "author": "Vadim Ivanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drdrunkenstienweb/fsd-task-one/issues"
+  },
+  "homepage": "https://github.com/drdrunkenstienweb/fsd-task-one#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
