@@ -1,3 +1,6 @@
+// Core
+import { merge } from "webpack-merge";
+
 // Constants
 import { SRC_DIR } from "../utils/constants";
 
@@ -7,13 +10,16 @@ import * as modules from "../modules/index.js";
 export default () => {
   const env = process.env.NODE_ENV;
 
-  return {
-    entry: {
-      main: SRC_DIR,
+  return merge(
+    {
+      entry: {
+        main: [SRC_DIR],
+      },
+      plugins: [modules.cleanWebpack(env)],
+      module: {
+        rules: [modules.loadSass(), modules.pugConvert()],
+      },
     },
-    plugins: [modules.setupHtml(), modules.cleanWebpack(env)],
-    module: {
-      rules: [modules.loadCss()],
-    },
-  };
+    { plugins: modules.setupHtml() }
+  );
 };
